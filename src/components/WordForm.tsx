@@ -7,15 +7,19 @@ export default function WordForm() {
 
     function handleChange(event : React.ChangeEvent<HTMLInputElement>) {
         const e = event.target
-        setWord(formData)
         setFormData(e.value)
     }
 
 
     function handleSubmit(e : React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-
-        setFormData('')
+        setFormData(prevState => {
+            prevState.toLowerCase()
+            prevState.replace(' ', '')
+            console.log(prevState)
+            return prevState
+        })
+        setWord(formData)
     }
 
     return (

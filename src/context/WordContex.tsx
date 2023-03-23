@@ -1,14 +1,14 @@
 import { useState, createContext, ReactElement } from "react";
 
 type ContextType = {
-    word?: string,
+    word: string,
     setWord: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const WordContext = createContext<ContextType>({})
+export const WordContext = createContext<ContextType>({} as ContextType)
 
 type ChildrenProps = {
-    children?: ReactElement | undefined
+    children?: ReactElement | ReactElement[] | undefined
 }
 
 const WordProvider = ( { children }: ChildrenProps) => {
