@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { WordContext } from "../context/WordContex";
+import { useNavigate } from 'react-router-dom'
 
 export default function WordForm() {
     const { setWord } = useContext(WordContext)
@@ -11,15 +12,11 @@ export default function WordForm() {
     }
 
 
+    const navigate = useNavigate()
     function handleSubmit(e : React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        setFormData(prevState => {
-            prevState.toLowerCase()
-            prevState.replace(' ', '')
-            console.log(prevState)
-            return prevState
-        })
-        setWord(formData)
+        setWord(formData.toLowerCase().replace(' ', ''))
+        navigate('/game')
     }
 
     return (

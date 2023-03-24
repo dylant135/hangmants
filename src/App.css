@@ -2,3 +2,36 @@
   margin: 0;
   padding: 0;
 }
+
+.center {
+  text-align: center;
+}
+
+form {
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+form > * {
+  margin: 7px;
+}
+
+input {
+  font-size: 1.2em;
+  padding: 4px;
+}
+
+.submitbtn {
+  padding: 5px;
+  font-size: 1.2em;
+  background-color: #930a15;
+}
+
+.submitbtn:hover {
+  background-color: #3e0409;
+  color: white;
+  cursor: pointer;
+}
