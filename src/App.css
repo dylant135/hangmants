@@ -35,3 +35,20 @@ input {
   color: white;
   cursor: pointer;
 }
+.keyboard {
+  width: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.key {
+  font-size: 1.2em;
+  padding: 3px;
+  margin: 3px;
+}
+
+.imgContainer {
+  width: fit-content;
+  margin: auto;
+}

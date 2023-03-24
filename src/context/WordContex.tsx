@@ -2,7 +2,9 @@ import { useState, createContext, ReactElement } from "react";
 
 type ContextType = {
     word: string,
-    setWord: React.Dispatch<React.SetStateAction<string>>
+    setWord: React.Dispatch<React.SetStateAction<string>>,
+    wrongGuesses: number,
+    setWrongGuesses: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const WordContext = createContext<ContextType>({} as ContextType)
@@ -13,10 +15,13 @@ type ChildrenProps = {
 
 const WordProvider = ( { children }: ChildrenProps) => {
     const [word, setWord] = useState('')
+    const [wrongGuesses, setWrongGuesses] = useState(0)
     return (
         <WordContext.Provider value={{
             word,
-            setWord
+            setWord,
+            wrongGuesses,
+            setWrongGuesses
         }}>
             {children}
         </WordContext.Provider>
