@@ -52,3 +52,22 @@ input {
   width: fit-content;
   margin: auto;
 }
+
+.buttonContainer {
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.newGamebtn {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 7px 0;
+  background-color: #930a15;
+}
+
+.newGamebtn:hover {
+  background-color: #3e0409;
+  color: white;
+  cursor: pointer;
+}

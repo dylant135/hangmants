@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import { WordContext } from "../context/WordContex";
 
 type displayProps = {
@@ -19,7 +20,7 @@ export default function DisplayWord({ correct, setCorrect }: displayProps) {
             dashes.push('_')
         }
         setShowWord(dashes)
-    }, [l])
+    }, [l, word])
 
     //update dashes with correct guessed letters
     useEffect(() => {
@@ -37,15 +38,16 @@ export default function DisplayWord({ correct, setCorrect }: displayProps) {
     }, [correct, setCorrect, showWord, word])
 
     //check to see if won
+    const navigate = useNavigate()
     useEffect(() => {
         if(showWord.length === 0) return
         
         if(showWord.includes('_')) {
-            console.log('not yet')
+
         } else {
-            console.log('you win')
+            navigate('/win')
         }
-    }, [showWord, correct])
+    }, [showWord, correct, navigate])
     
     return (
         <div>

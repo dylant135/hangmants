@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import { WordContext } from "../context/WordContex";
 import DisplayWord from "./DisplayWord";
 import Hangman from "./Hangman";
@@ -32,9 +33,10 @@ export default function Game() {
         }
     }
 
+    const navigate = useNavigate()
     function didLose() {
-        if(wrongGuesses >= 6) {
-            console.log('you lose')
+        if(wrongGuesses >= 5) {
+            navigate('/loss')
         }
     }
     
